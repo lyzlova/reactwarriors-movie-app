@@ -1,18 +1,32 @@
-import React from "react";
+import React from 'react';
+import SortBy from './SortBy';
+import Years from './Years';
+import Pagination from './Pagination';
+import Genre from './Genre';
 
 export default class Filters extends React.Component {
   render() {
+    const {
+      filters: { sort_by, year, genre },
+      onChangeFilters,
+      page,
+      onChangePage,
+      resetValue,
+      pageSize,
+      totalCount,
+    } = this.props;
     return (
-      <form className="mb-3">
-        <div className="form-group">
-          <label htmlFor="sort_by">Сортировать по:</label>
-          <select className="form-control" id="sort_by">
-            <option value="popularity.desc">Популярные по убыванию</option>
-            <option value="popularity.asc">Популярные по возростанию</option>
-            <option value="vote_average.desc">Рейтинг по убыванию</option>
-            <option value="vote_average.asc">Рейтинг по возростанию</option>
-          </select>
-        </div>
+      <form className="mb-3 form-filters">
+        <SortBy sort_by={sort_by} onChangeFilters={onChangeFilters} />
+        <Years year={year} onChangeFilters={onChangeFilters} />
+        <Genre genre={genre} onChangeFilters={onChangeFilters} />
+        <Pagination
+          page={page}
+          onChangePage={onChangePage}
+          resetValue={resetValue}
+          pageSize={pageSize}
+          totalCount={totalCount}
+        />
       </form>
     );
   }
