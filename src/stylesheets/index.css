@@ -1,3 +1,146 @@
 body {
-  background: #fdfdfd; 
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+  width: 100%;
+  height: 195px;
+  object-fit: cover;
+}
+
+header {
+  top: 0;
+  left: 0;
+  background-color: #0069d9;
+  width: 100%;
+}
+
+.logo-img {
+  width: 6rem;
+  height: 6rem;
+}
+
+.discover-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.discover-header {
+  padding-bottom: 2rem;
+}
+
+.form-filters {
+  padding: 20px 0;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.current {
+  margin-right: 4px;
+  font-style: normal;
+  font-weight: 400;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(0, 0, 0);
+  border-image: initial;
+  padding: 2px 8px;
+}
+
+.btn-group-style {
+  display: flex;
+}
+
+.btn-reset {
+  display: block;
+  margin: 0 auto;
+  margin-top: 16px;
+  background-color: #0069d9;
+  color: #f8f9fa;
+}
+
+.card-img-top {
+  height: 195px;
+}
+
+.card-title {
+  margin-bottom: 0;
+}
+
+.card-text {
+  margin-top: 10px;
+}
+
+.clip {
+  margin-top: 30px;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  height: 100px;
+}
+
+.view_more {
+  border-top: 1px solid #e3e3e3;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-genres {
+  height: auto;
+  padding: 0;
+}
+
+.checkbox {
+  display: none;
+  height: 200px;
+  overflow: auto;
+}
+
+#option-genres {
+  margin: 6px 14px;
+}
+
+.input-genres {
+  margin-right: 10px;
+  display: none;
+}
+
+.label-genres {
+  margin-left: 20px;
+}
+
+.label-genres {
+  display: flex;
+  flex-direction: column;
+}
+
+.block-genres:hover {
+  flex-direction: column;
+  color: #000000;
+  background-color: #f2f2f2;
+}
+
+.result {
+  text-decoration: none;
+  color: #075311;
+}
+
+.result:hover {
+  text-decoration: none;
+  color: #f8f9fa;
+  padding: 6px;
+  border: 2px solid #075311;
+  border-radius: 4px;
+  background-color: #075311;
 }

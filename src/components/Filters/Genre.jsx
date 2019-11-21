@@ -35,7 +35,7 @@ export default class Genre extends React.Component {
   };
 
   render() {
-    const { genre, onChangeFilters } = this.props;
+    const { genre, onChangeGenre } = this.props;
     return (
       <React.Fragment>
         <div className="form-group">
@@ -43,7 +43,7 @@ export default class Genre extends React.Component {
             id="genre"
             name="genre"
             value={genre}
-            onChange={onChangeFilters}
+            onChange={onChangeGenre}
             onClick={this.onClickGenre}>
             <label htmlFor="genre">Genres</label>
             <div className="form-control form-genres">

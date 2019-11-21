@@ -1,6 +1,7 @@
 import React from 'react';
 import Filters from './Filters/Filters';
 import MoviesList from './Movies/MovieList';
+import Header from './Header/Header';
 
 export default class App extends React.Component {
   constructor() {
@@ -19,6 +20,17 @@ export default class App extends React.Component {
   }
 
   onChangeFilters = event => {
+    const newFilters = {
+      ...this.state.filters,
+      [event.target.name]: event.target.value,
+    };
+
+    this.setState({
+      filters: newFilters,
+    });
+  };
+
+  onChangeGenre = event => {
     const newFilters = {
       ...this.state.filters,
       [event.target.name]: event.target.value,
@@ -55,25 +67,24 @@ export default class App extends React.Component {
   render() {
     const { filters, page, pageSize, totalCount } = this.state;
     return (
-      <div className="container">
-        <div className="row mt-4">
-          <div className="col-4">
-            <div className="card" style={{ width: '100%' }}>
-              <div className="card-body">
-                <h3>Фильтры:</h3>
-                <Filters
-                  page={page}
-                  filters={filters}
-                  onChangeFilters={this.onChangeFilters}
-                  onChangePage={this.onChangePage}
-                  resetValue={this.resetValue}
-                  pageSize={pageSize}
-                  totalCount={totalCount}
-                />
-              </div>
+      <React.Fragment>
+        <Header />
+        <div className="container">
+          <div className="discover-header">
+            <div className="discover-form w-100">
+              <Filters
+                page={page}
+                filters={filters}
+                onChangeFilters={this.onChangeFilters}
+                onChangeGenre={this.onChangeGenre}
+                onChangePage={this.onChangePage}
+                resetValue={this.resetValue}
+                pageSize={pageSize}
+                totalCount={totalCount}
+              />
             </div>
           </div>
-          <div className="col-8">
+          <div className="col-12">
             <MoviesList
               page={page}
               filters={filters}
@@ -81,7 +92,7 @@ export default class App extends React.Component {
             />
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }

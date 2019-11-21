@@ -9,6 +9,7 @@ export default class Filters extends React.Component {
     const {
       filters: { sort_by, year, genre },
       onChangeFilters,
+      onChangeGenre,
       page,
       onChangePage,
       resetValue,
@@ -16,18 +17,22 @@ export default class Filters extends React.Component {
       totalCount,
     } = this.props;
     return (
-      <form className="mb-3 form-filters">
-        <SortBy sort_by={sort_by} onChangeFilters={onChangeFilters} />
-        <Years year={year} onChangeFilters={onChangeFilters} />
-        <Genre genre={genre} onChangeFilters={onChangeFilters} />
-        <Pagination
-          page={page}
-          onChangePage={onChangePage}
-          resetValue={resetValue}
-          pageSize={pageSize}
-          totalCount={totalCount}
-        />
-      </form>
+      <React.Fragment>
+        <div className="form-filters">
+          <SortBy sort_by={sort_by} onChangeFilters={onChangeFilters} />
+          <Years year={year} onChangeFilters={onChangeFilters} />
+          <Genre genre={genre} onChangeGenre={onChangeGenre} />
+        </div>
+        <div>
+          <Pagination
+            page={page}
+            onChangePage={onChangePage}
+            resetValue={resetValue}
+            pageSize={pageSize}
+            totalCount={totalCount}
+          />
+        </div>
+      </React.Fragment>
     );
   }
 }
