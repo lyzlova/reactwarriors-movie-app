@@ -16,7 +16,7 @@ export default class Filters extends React.Component {
       totalCount,
     } = this.props;
     return (
-      <form className="mb-3 form-filters">
+      <div className="form-filters">
         <SortBy sort_by={sort_by} onChangeFilters={onChangeFilters} />
         <Years year={year} onChangeFilters={onChangeFilters} />
         <Genre genre={genre} onChangeFilters={onChangeFilters} />
@@ -27,7 +27,7 @@ export default class Filters extends React.Component {
           pageSize={pageSize}
           totalCount={totalCount}
         />
-      </form>
+      </div>
     );
   }
 }
