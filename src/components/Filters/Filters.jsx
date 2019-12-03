@@ -18,12 +18,10 @@ export default class Filters extends React.Component {
     } = this.props;
     return (
       <React.Fragment>
-        <div className="form-filters">
+        <form className="mb-3 form-filters">
           <SortBy sort_by={sort_by} onChangeFilters={onChangeFilters} />
           <Years year={year} onChangeFilters={onChangeFilters} />
           <Genre genre={genre} onChangeGenre={onChangeGenre} />
-        </div>
-        <div>
           <Pagination
             page={page}
             onChangePage={onChangePage}
@@ -31,7 +29,7 @@ export default class Filters extends React.Component {
             pageSize={pageSize}
             totalCount={totalCount}
           />
-        </div>
+        </form>
       </React.Fragment>
     );
   }

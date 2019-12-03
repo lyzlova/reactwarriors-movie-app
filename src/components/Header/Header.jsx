@@ -1,8 +1,10 @@
 import React from 'react';
 import Login from './Login/Login';
+import User from './Login/User';
 
 export default class Header extends React.Component {
   render() {
+    const { user, updateUser, updateSessionId, logout } = this.props;
     return (
       <nav className="navbar navbar-dark bg-primary">
         <div className="container">
@@ -11,14 +13,13 @@ export default class Header extends React.Component {
               <a className="nav-link">Home</a>
             </li>
           </ul>
-          <Login />
+          {user ? (
+            <User user={user} logout={logout} />
+          ) : (
+            <Login updateUser={updateUser} updateSessionId={updateSessionId} />
+          )}
         </div>
       </nav>
-      // <header>
-      //   <div className="container">
-      //     <img className="logo-img" srcSet={MovieImg} alt="logo-img" />
-      //   </div>
-      // </header>
     );
   }
 }
